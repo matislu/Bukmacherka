@@ -1,0 +1,57 @@
+<!-- views/profile.ejs -->
+<!doctype html>
+<html>
+<head>
+	<title>Mapka</title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+	<style>
+		body 		{ padding-top:80px; word-wrap:break-word; }
+    </style>
+    <style>
+        #map {
+          width: 100%;
+          height: 600px;
+          background-color: grey;
+        }
+    </style>
+  
+</head>
+<body>
+<div class="container">
+
+	<div class="page-header text-center">
+        <h1><span ></span> Mapa naszych punktów</h1>
+        
+        <div id="map"></div>
+        <script>
+          function initMap() {
+            var uluru = {lat:  50.0766560, lng: 19.9446366};
+            var uluru2 = {lat: 50.0687396, lng: 19.9838334};
+            var srodek = {lat: 50.0727000, lng: 19.9640000}
+            var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 15,
+              center: srodek
+            });
+            var marker = new google.maps.Marker({
+              position: uluru,
+              map: map
+            });
+            var marker2 = new google.maps.Marker({
+              position: uluru2,
+              map: map
+            });
+          }
+        </script>
+        <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9oETNK2y2YbHs2i8Wh9ZeyDqKQYTBISo&callback=initMap">
+        
+        </script>
+
+
+        <a href="/mapaback" class="btn btn-default btn-sm">Powrót</a>
+	</div>
+
+</div>
+</body>
+</html>

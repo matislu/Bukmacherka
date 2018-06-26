@@ -1,0 +1,86 @@
+<!-- views/signup.ejs -->
+<!doctype html>
+<html>
+<head>
+	<title>Rejestracja</title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+	<style>
+		body 		{ padding-top:80px; }
+	</style>
+</head>
+<body>
+<div class="container">
+
+<div class="col-sm-6 col-sm-offset-3">
+
+	<h1><span class="fa fa-sign-in"></span> Rejestracja</h1>
+
+	<!-- Wyświetlanie wiadomości flash jako alert -->
+	<% if (message.length > 0) { %>
+		<div class="alert alert-danger"><%= message %></div>
+	<% } %>
+
+	<!-- Formularz rejestracji -->
+	<form action="/signup" method="post">
+		<div class="form-group">
+			<label>Imię</label>
+			<input type="text" class="form-control" name="imie">
+		</div>
+		<div class="form-group">
+			<label>Nazwisko</label>
+			<input type="text" class="form-control" name="nazwisko">
+		</div>
+		<div class="form-group">
+			<label>Pesel</label>
+			<input type="text" class="form-control" name="pesel">
+		</div>
+		<div class="form-group">
+			<label>Hasło</label>
+			<input type="password" class="form-control" name="haslo">
+		</div>
+		<div class="form-group">
+			<label>Numer telefonu</label>
+			<input type="text" class="form-control" name="nrtel">
+		</div>
+		<div class="form-group">
+			<label>Numer konta</label>
+			<input type="text" class="form-control" name="nrkonta">
+		</div>
+		<div class="form-group">
+			<label>Kod pocztowy</label>
+			<input type="text" class="form-control" name="kodpoczt">
+		</div>
+		<div class="form-group">
+			<label>Miasto</label>
+			<input type="text" class="form-control" name="miasto">
+		</div>
+		<div class="form-group">
+			<label>Ulica</label>
+			<input type="text" class="form-control" name="ulica">
+		</div>
+		<div class="form-group">
+			<label>Numer budynku</label>
+			<input type="text" class="form-control" name="nrbud">
+		</div>
+		<div class="form-group">
+			<label>Numer mieszkania</label>
+			<input type="text" class="form-control" name="nrmie">
+		</div>
+		<div class="form-group">
+			<label>Email</label>
+			<input type="text" class="form-control" name="email">
+		</div>
+		<button type="submit" class="btn btn-success btn-lg">Signup</button>
+	</form>
+
+	<hr>
+
+	<p>Masz już konto? <a href="/login"> Logowanie</a></p>
+	<p>Lub wróć<a href="/"> Strona główna</a>.</p>
+
+</div>
+
+</div>
+</body>
+</html>
